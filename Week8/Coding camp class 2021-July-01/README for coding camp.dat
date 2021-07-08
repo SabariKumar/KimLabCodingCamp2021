@@ -1,0 +1,18 @@
+USE THE LOCAL MACHINES IN LINUX WITH PYCONFORT AND XTB INSTALLED!! (i.e. Fireball, Subzero, Buzzsaw, Dynamo or DrMax)
+
+1) Activate the DL_CPU environment:
+source activate DL_CPU
+
+2) Using the SMILES database in the pyCONFORT folder, run pyconfort with the yaml file (the yaml file includes a filter of conformers that are not used experimentally):
+python -m pyconfort --varfile parameters_Ir-xTB_bidentates.yaml
+
+3) Copy the COM files (inside the QMCALC folder) automatically generated with pyCONFORT in the same folder as de disco-xtb.py and xtb_to_json.py scripts
+
+4) Run the disco-xtb.py script (for xTB optimization in singlet state):
+python disco-xtb.py --xtb RUN --input com --keep_files --discard_opt --suffix _xTB_S0opt --get_freq
+
+5) Convert the json files created before into CSV databases including local metal properties:
+python disco-xtb.py --xtb ANALYZE --atom Ir-* --csv --get_freq
+
+6) Get the Boltzmann averaged descriptors (uses a CSV pyCONFORT input file to get the individual species, with the compound names in a column called "code_name"):
+python disco-xtb.py --xtb BOLTZ --pyconf_input Database_pyCONFORT_INPUT_Ir.csv

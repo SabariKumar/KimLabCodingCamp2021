@@ -1,0 +1,18 @@
+# --- (1) SET-UP AND PERFORMANCE OPTIONS
+# MODULES
+CSEARCH : rdkit # Conformer generators. Options: rdkit, summ, fullmonte
+QPREP : gaussian # options: gaussian
+
+# --- (2) CONFORMER GENERATION AND REFINEMENT: CSEARCH AND CMIN
+# INPUT FILE AND PREFIX
+input : 'Database_pyCONFORT_INPUT_Ir.csv' # input file
+
+# COMMON OPTIONS
+cpus : 4 # maximum number of threads to parallelize on while running CSEARCH and CMIN
+sample : 2 # number of conformers to sample to get non-torsional differences. If sample = 'auto', the program will calculate the number of conformers to sample
+
+# OPTIONS FOR METALS AND ATOMS WITH UNCOMMON HYBRIDIZATIONS (i.e. pentacoordinated phosphorus)
+metal_complex : True # True to activate this option
+metal : ['Ir'] # specify the metal(s) or atom(s) with uncommon hybridization, in the format ['Pd','Ir','P',...]
+m_oxi : [3] # oxidation number of the atom (it is used to calculate the charge of the molecule), in the format [1,1,0,...]
+complex_type : '' # predefined complex geometries. Options: linear, trigonalplanar, squareplanar or squarepyramidal

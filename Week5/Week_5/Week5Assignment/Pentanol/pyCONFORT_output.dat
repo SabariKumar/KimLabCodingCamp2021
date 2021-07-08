@@ -1,0 +1,38 @@
+
+o  Importing pyCONFORT parameters from ./parameters_file_REDUCED_Pentanol.yaml
+o  RESET CSEARCH from None to rdkit
+o  RESET CMIN from None to False
+o  RESET QPREP from None to gaussian
+o  RESET verbose from False to True
+o  DEFAULT time : True
+o  RESET input from   to /home/sabari/Documents/College/GradSchool/CSU/KimLab/CodingCamp2020/Week5/Week_5/Week5Assignment/Pentanol/PentanolSMILES.csv
+o  DEFAULT sample : auto
+o  DEFAULT ewin_fullmonte : 5.0
+o  DEFAULT charge_default : auto
+o  DEFAULT mult : 1
+o  RESET nprocs from 24 to 12
+o  RESET mem from 96GB to 24GB
+o  DEFAULT frequencies : True
+o  DEFAULT max_cycle_opt : 100
+o  DEFAULT calcfc : False
+o  DEFAULT chk : False
+o  RESET basis_set from ['6-31g*'] to ['6-31+G(d,p)']
+o  RESET level_of_theory from ['wb97xd'] to ['B3LYP']
+o  RESET solvent_model from gas_phase to smd
+o  RESET solvent_name from Acetonitrile to water
+o  RESET set_input_line from None to NormalPNO TightSCF printbasis
+o  RESET empirical_dispersion from None to GD3BJ
+o  RESET metal_complex from False to True
+o  RESET metal from [] to ['Ir']
+o  RESET m_oxi from [] to ['3']
+o  DEFAULT complex_type : 
+o  DEFAULT exp_rules : []
+o  DEFAULT angle_off : 30
+o  RESET genecp_atoms from [] to ['Ir']
+o  DEFAULT gen_atoms : []
+o  RESET basis_set_genecp_atoms from [] to ['def2svp']
+
+ All molecules execution time CSEARCH: 1.11 seconds
+
+o  Preparing QM input files in QMCALC/G16/B3LYP-6-31+G(d,p)
+   -> Converting from Pentanol_rdkit.sdf

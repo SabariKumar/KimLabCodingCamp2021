@@ -1,0 +1,4 @@
+code_name,SMILES,lambda_max,2nd_max_peak,Experimental_wavelength,Peak_difference,Solvent,DOI,,,,Correction applied to spectra,,77K,,Correction,Mistake
+Ir_cat_001,FC1=CC([Ir]2([N+]3=C4C=CC=C3)([N+]5=CC=CC=C54)([N+]6=CC(C(F)(F)F)=CC=C67)[N+]8=CC(C(F)(F)F)=CC=C8C9=C2C=C(F)C=C9F)=C7C(F)=C1.F[P-](F)(F)(F)(F)F,473,Not specified,473,#VALUE!,MeCN,10.1016/j.jorganchem.2014.10.037,,,,Not specified,,,,,
+Ir_cat_002,FC1=CC([Ir]2([N+]3=CC=CC=C34)(C5=C6C(F)=CC(F)=C5)([N+]7=CC=CC=C76)C8=CC(F)=CC(F)=C8C9=[N+]2C=CC=C9)=C4C(F)=C1,475,Not specified,475,#VALUE!,MeCN,10.1016/j.jorganchem.2014.10.037,,,,Not specified,,,,,
+Ir_cat_003,FC1=CC([Ir]2([N+]3=C4C=C(C(C)(C)C)C=C3)([N+]5=CC=C(C(C)(C)C)C=C54)([N+]6=CC(C(F)(F)F)=CC=C67)[N+]8=CC(C(F)(F)F)=CC=C8C9=C2C=C(F)C=C9F)=C7C(F)=C1.F[P-](F)(F)(F)(F)F,476,Not specified,476,#VALUE!,MeCN,10.1016/j.jorganchem.2014.10.037,,,,Not specified,,,,,

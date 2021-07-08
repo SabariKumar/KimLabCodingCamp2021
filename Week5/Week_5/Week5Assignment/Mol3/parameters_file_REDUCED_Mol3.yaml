@@ -1,0 +1,69 @@
+# --- (1) SET-UP AND PERFORMANCE OPTIONS
+# MODULES
+CSEARCH : rdkit # Conformer generators. Options: rdkit, summ, fullmonte
+CMIN : False # Conformer refiners. Options: ani, xtb
+QPREP : gaussian # options: gaussian
+
+# performance
+verbose : True # request verbose mode
+time : True # request running time
+
+# --- (2) CONFORMER GENERATION AND REFINEMENT: CSEARCH AND CMIN
+# INPUT FILE AND PREFIX
+input : '/home/sabari/Documents/College/GradSchool/CSU/KimLab/CodingCamp2020/Week5/Week_5/Week5Assignment/Mol3/Mol3.csv' # input file
+
+# COMMON OPTIONS
+sample : 'auto' # number of conformers to sample to get non-torsional differences. If sample = 'auto', the program will calculate the number of conformers to sample
+
+# energy windows in kcal/mol for the different methods (conformers with E higher than ewin will be discarded)
+ewin_rdkit : 5 # for RDKit and SUMM
+ewin_fullmonte : 5 # for Full Monte
+ewin_min : 5 # for ANI1ccx and xTB
+
+# --- (3) QM INPUT FILE GENERATION: QPREP
+# COMMON OPTIONS
+# charge and multiplicity
+charge_default : 'auto' # charge of the molecule (when the metal option = False). If charge_default = 'auto', the program will calculate the charge for you
+mult : 1 # final multiplicity of the molecule (the code does not calculate spin, it must be defined by the user)
+
+# input keywords
+## number of processors and memory
+nprocs : 12 # number of processors in %nprocshared
+mem: '24GB' # amount of memory in %mem (for Gaussian) or in %maxcore (for ORCA, GB = x1000, MB = x1)
+
+# Specific input keywords for Gaussian
+## freq and opt
+frequencies : True # include frequency calculation
+max_cycle_opt : 100 # maxcycles for the optimization
+calcfc : False # include calcfc in the optimization
+## include chk line
+chk : False # include a %chk line at the beginning of the COM file
+
+# level of theory
+## basis set and functional
+basis_set : ['6-31+G(d,p)'] # basis set(s). Format: ['6-31+G(d,p)','Def2TZVP',...]
+level_of_theory : ['B3LYP'] # functional(s). Format: ['B3LYP','wB97XD',...]
+## solvation model
+solvent_model : 'smd' # type of solvation model. Options: gas_phase or any solvation model (i.e. SMD, IEFPCM, CPCM)
+solvent_name : 'water' # solvent used (i.e. chloroform, toluene, etc)
+set_input_line : 'NormalPNO TightSCF printbasis' # (i) keywords used in Gaussian input files (overiding opt and freq) or (ii) additional keywords for the ORCA input line
+
+# Specific options of level of theory for Gaussian
+## dispersion correction
+empirical_dispersion : 'GD3BJ'# type of dispersion correction. Format: 'GD3', 'GD3BJ', etc
+
+
+
+
+# OPTIONS FOR METALS AND ATOMS WITH UNCOMMON HYBRIDIZATIONS (i.e. pentacoordinated phosphorus)
+metal_complex : False # True to activate this option
+metal : ['Ir'] # specify the metal(s) or atom(s) with uncommon hybridization, in the format ['Pd','Ir','P',...]
+m_oxi : ['3'] # oxidation number of the atom (it is used to calculate the charge of the molecule), in the format [1,1,0,...]
+complex_type : '' # predefined complex geometries. Options: linear, trigonalplanar, squareplanar or squarepyramidal
+exp_rules : [] # Discarding rules applied to filter-off conformers (based on experimental observation for example). Format: i) manual: ['ATOM1-ATOM2-ATOM3, ANGLE'] (i.e. ['C-Pd-C, 180']), ii) pre-set: 'Ir_bidentate_x3'
+angle_off : 30 # Deviation to discard in exp_rules (i.e. 180 +- 30 degrees)
+
+## atoms included in gen/genecp and their level of theory (it admits .txt or .yaml files with the basis set information)
+genecp_atoms : ['Ir'] # list of atoms included in the genecp part (do not use genecp_atoms and gen_atoms at the same time!). Format: ['Pd','Ir','Pt',...]
+gen_atoms : [] # list of atoms included in the gen part (do not use genecp_atoms and gen_atoms at the same time!). Format: ['Pd','Ir','Pt',...]
+basis_set_genecp_atoms : ['def2svp'] # basis set for the gen/genecp part

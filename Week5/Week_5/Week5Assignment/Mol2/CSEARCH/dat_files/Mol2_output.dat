@@ -1,0 +1,16 @@
+   -> Input Molecule 0 is CC[C@@H](C=CCSC)NC(C)=O
+
+   ----- Mol2 -----
+o  540 conformers initially generated with RDKit
+o  Optimizing 540 initial conformers with MMFF
+o  Systematic torsion rotation is set to OFF
+
+
+o  Applying filters to intial conformers
+o  28 conformers rejected based on energy window ewin_csearch (E > 5.0 kcal/mol)
+o  411 duplicates removed  pre-energy filter (E < 0.0001 kcal/mol)
+o  Removing duplicate conformers (RMSD < 0.25 and E difference < 0.25 kcal/mol)
+o  1 duplicates removed (RMSD < 0.25 / E < 0.25 kcal/mol)
+o  100 unique conformers remain
+
+ Execution time CSEARCH: 7.63 seconds
